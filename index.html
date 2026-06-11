@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё Динамическое Портфолио</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #fff; padding: 40px; }
+        h1 { color: #00ffcc; }
+        #projects-list { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .loading { color: #aaa; font-style: italic; }
+        /* Базовые стили для новой кнопки удаления */
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 51, 51, 0.1); /* Полупрозрачный красный фон */
+    color: #ff4d4d;
+    border: 1px solid rgba(255, 51, 51, 0.2);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease; /* Плавность всех изменений */
+}
+
+/* Эффект при наведении мышки */
+.delete-btn:hover {
+    background: #ff3333; /* Яркий красный фон */
+    color: #ffffff; /* Белый текст */
+    border-color: #ff3333;
+    box-shadow: 0 0 12px rgba(255, 51, 51, 0.4); /* Мягкое неоновое свечение */
+    transform: translateY(-1px); /* Кнопка слегка приподнимается */
+}
+
+/* Эффект в момент самого клика */
+.delete-btn:active {
+    transform: translateY(1px) scale(0.98); /* Кнопка слегка вдавливается */
+    box-shadow: none;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Мои проекты (Загрузка из SQL)</h1>
+    
+    <!-- Сюда JavaScript будет вставлять карточки проектов из базы данных -->
+    <div id="projects-list">
+        <p class="loading">Загрузка проектов с сервера...</p>
+    </div>
+
+    <hr style="margin-top: 50px; border-color: #333;">
+
+    <!-- Блок Админки -->
+    <div style="margin-top: 30px; background: #252525; padding: 25px; border-radius: 8px; max-width: 500px;">
+        <h2 style="color: #ff007f; margin-top: 0;">Панель администратора</h2>
+        <form id="admin-form" style="display: flex; flex-direction: column; gap: 15px;">
+            <label>Название проекта:<br>
+                <input type="text" id="title" required style="width: 100%; padding: 8px; background: #333; color: #fff; border: 1px solid #558; border-radius: 4px; box-sizing: border-box;">
+            </label>
+            <label>Описание:<br>
+                <textarea id="description" rows="3" style="width: 100%; padding: 8px; background: #333; color: #fff; border: 1px solid #558; border-radius: 4px; box-sizing: border-box;"></textarea>
+            </label>
+            <label>Ссылка на проект в Figma:<br>
+                <input type="url" id="figma_url" style="width: 100%; padding: 8px; background: #333; color: #fff; border: 1px solid #558; border-radius: 4px; box-sizing: border-box;">
+            </label>
+            <label>Ссылка на готовый сайт (Live URL):<br>
+                <input type="url" id="live_url" style="width: 100%; padding: 8px; background: #333; color: #fff; border: 1px solid #558; border-radius: 4px; box-sizing: border-box;">
+            </label>
+            <label>Загрузить скриншот проекта:<br>
+    <input type="file" id="image_file" accept="image/*" required style="margin-top: 5px; color: #fff;">
+            </label>
+
+            <button type="submit" style="padding: 12px; background: #ff007f; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Добавить проект в базу данных</button>
+        </form>
+    </div>
+
+
+    <!-- Подключаем наш скрипт логики -->
+    <script src="script.js"></script>
+</body>
+</html>
