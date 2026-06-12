@@ -1,6 +1,5 @@
 // Адрес нашего запущенного бэкенда
-const API_URL = 'https://my-portfolio-api-mtb2.onrender.com';
-
+const API_URL = 'https://my-portfolio-api-mtb2.onrender.com/api';
 // Функция, которая запрашивает проекты у бэкенда
 async function loadProjects() {
     const projectsList = document.getElementById('projects-list');
